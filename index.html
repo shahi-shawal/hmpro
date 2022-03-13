@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        /*body{
+            background-image:url("https://media.istockphoto.com/photos/light-orange-color-wall-texture-picture-id175409968?k=20&m=175409968&s=612x612&w=0&h=oPgSZcRv8_6k-VUfdcFs7Wyx5flVexHWuUFFqkCWJjQ=");
+        }*/
+        .main-layout{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 100px auto 100px;
+        grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m m c c c c c c c c c c"
+        "f f f f f f f f f f f f"
+        ;
+       }
+
+       .header{
+        grid-column: h;
+        background-color: #333;
+        align-items: center;
+       }
+       .topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+        
+    .topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+       }
+       .topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+                  
+
+     .topnav a:hover {
+  background-color: #ddc;
+  color: black;
+              }
+  .topnav a.active {
+  background-color:#04AA6D;
+  color: white;
+  
+}
+
+       .menu{
+             grid-column: m;
+             background-color: white;
+             width: auto;
+             height: auto;
+             padding: 10px;
+             border: 1px solid black;
+             margin: 10px;
+             border-radius: 20px;
+       }
+
+         .menu img{
+             max-width: 100px;
+            min-width: 70px;
+            min-height: 100px;
+            border-radius: 50px;
+           
+             }
+             .menu img{
+             max-width: 100px;
+            min-width: 70px;
+            min-height: 100px;
+            border-radius: 50px;
+            display: none;
+           
+             }
+
+
+
+       .menu:hover{
+        box-shadow: 2px 4px 20px 6px black;
+       }
+       .menu a.act {
+             background-color: #04AA6D;
+             color: white;
+             font-size: 20px;
+             padding: auto;
+             text-align: center;
+             color: rgb(5, 1, 1);
+     
+
+       }
+
+       .menu a:hover{
+           background-color: #ddc;
+           /* color: #000; */
+       }
+       .menu a.act1 {
+             /* background-color:white; */
+             color: white;
+             font-size: 20px;
+             font-style: normal;
+             padding: auto;
+             text-align: center;
+             text-decoration: none;
+             color: black;
+             text-overflow: ellipsis;
+             overflow: hidden;
+            
+             
+       }
+       .menu a.act1:hover{
+           background-color: rgb(226, 23, 118);
+           color: rgb(238, 225, 225);
+       }
+       .menu ul {
+             color: white;
+             font-size: 20px;
+             text-decoration: none;
+             color: black;
+             display: none;
+                  }
+       /* .menu ul:hover{
+        background-color: rgb(226, 23, 118);
+       } */
+       
+       .menu button{
+            margin: 5px;
+            background-color: skyblue;
+            color: black;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+
+       .content{
+         grid-column: c;
+         display: grid;
+        /* background-color: gray; */
+        text-align: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "oc oc oc s";
+        display: none;
+
+       }
+       .o-content{
+        /* background-color: grey; */
+        grid-column: oc;
+       display:flex;
+        flex-wrap: wrap;
+       justify-content: space-between ;
+       }
+       .each-content{
+        width: auto;
+        height: auto;
+        padding: 10px;
+        /* border: 1px solid black; */
+        margin: 10px;
+        border-radius: 20px;
+
+       }
+
+
+
+       .each-content:hover{
+        box-shadow: 2px 4px 20px 6px black;
+       }
+       .each-content img{
+         max-width: 400px;
+            min-width: 70px;
+            min-height: 150px;
+            border-radius: 25px;
+       }
+       .each-content h1{
+        font-size: 20px;
+       }
+       .click{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+       }
+    .info{
+        flex: 1;
+
+    }
+   .info h1{
+    font-size: 20px;
+    color: green;
+   }
+   .visit{
+    flex: 1;
+    border: 1px solid black;
+   border-radius: 5px;
+   color: black;
+   font-size: 15px;
+   }
+   .visit:hover{
+    border: 1px solid black;
+   border-radius: 5px;
+   color: black;
+   box-shadow: 1px 5px 2px 3px rgb(22, 22, 2);
+
+   }
+
+   .visit button{
+            padding: 1px;
+            background-color: brown;
+        }
+
+        .sidebar{
+            grid-column: s;
+            background-color: white;
+        }
+        .author{
+            /* box-shadow: 2px 3px 4px 3px grey; */
+            border-radius: 20%;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 40%;
+            }
+
+           .fa:hover {
+           opacity: 0.7;
+                  }
+
+         .fa-facebook {
+             background: #3B5998;
+            color: white;
+                     }
+
+       .fa-twitter {        
+              background: #55ACEE;
+              color: white;
+                    }
+    .fa-linkedin {
+           background: #007bb5;
+             color: white;
+              }
+
+       .fa-youtube {
+         background: #bb0000;
+       color: white;
+      }
+
+     .fa-instagram {
+    background: #125688;
+       color: white;
+              }
+
+
+
+
+       .footer{
+         grid-column: f;
+        background-color: rgb(19, 14, 14);
+
+       }
+       .footer p{
+            text-align: center;
+            font-style: larger;
+            font-size: 17px;
+            color: white;
+        }
+
+
+
+        .header{
+        grid-column: h;
+        background-color: #333;
+        align-items: center;
+       }
+       .topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+        
+    .topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+       }
+       .topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+                  
+
+     .topnav a:hover {
+  background-color: #ddc;
+  color: black;
+              }
+  .topnav a.active {
+  background-color:#04AA6D;
+  color: white;
+  
+}
+
+       .custommenu{
+             grid-column: m;
+             background-color: white;
+             width: auto;
+             height: auto;
+             padding: 10px;
+             border: 1px solid black;
+             margin: 10px;
+             border-radius: 20px;
+                 }
+
+         .custommenu img{
+             max-width: 150px;
+            min-width: 70px;
+            min-height: 150px;
+            border-radius: 50px;
+           
+             }
+
+
+
+       .custommenu:hover{
+        box-shadow: 2px 4px 20px 6px black;
+       }
+       .custommenu a.act {
+             background-color: #04AA6D;
+             color: white;
+             font-size: 20px;
+             padding: auto;
+             text-align: center;
+             color: rgb(5, 1, 1);
+     
+
+       }
+
+       .custommenu a:hover{
+           background-color: #ddc;
+           /* color: #000; */
+       }
+       .custommenu a.act1 {
+             /* background-color:white; */
+             color: white;
+             font-size: 20px;
+             font-style: normal;
+             padding: auto;
+             text-align: center;
+             text-decoration: none;
+             color: black;
+             text-overflow: ellipsis;
+             overflow: hidden;
+            
+             
+       }
+       .custommenu a.act1:hover{
+           background-color: rgb(226, 23, 118);
+           color: rgb(238, 225, 225);
+       }
+       .custommenu ul {
+             /* color: white; */
+             font-size: 20px;
+             list-style: none;
+             text-decoration: none;
+             text-align:justify;
+            
+             /* color: black; */
+
+             /* display: none; */
+                  }
+       /* .menu ul:hover{
+        background-color: rgb(226, 23, 118);
+       } */
+.custommenu ul li a {
+    /* text-align: center;
+    text-decoration: none;
+    font size: 20px;
+    padding: 25px;
+     */
+             color: white;
+             /* font-size: 30px; */
+             font-style: normal;
+             padding: auto;
+             color: black;
+             text-overflow: ellipsis;
+             overflow: hidden;
+}
+       
+       .custommenu button{
+            margin: 5px;
+            background-color: skyblue;
+            color: black;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+
+       .customcontent{
+         grid-column: c;
+         display: grid;
+        /* background-color: gray; */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "oc oc oc s";
+        
+
+       }
+       .customo-content{
+        /* background-color: grey; */
+        grid-column: oc;
+       display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between ;
+       }
+       .customeach-content{
+        width: auto;
+        height: auto;
+        padding: 10px;
+        border: 1px solid black;
+        margin: 5px;
+        border-radius: 20px;
+
+       }
+
+
+
+       .customeach-content:hover{
+        box-shadow: 2px 4px 20px 6px black;
+       }
+       .customeach-content img{
+        max-width: 400px;
+            min-width: 70px;
+            min-height: 150px;
+            border-radius: 25px;
+      
+       }
+       .customeach-content h1{
+        font-size: 20px;
+      
+       }
+
+
+       .customclick{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+       }
+    .custominfo{
+        flex: 1;
+
+    }
+   .custominfo h1{
+    font-size: 20px;
+    color: green;
+   }
+   .customvisit{
+    flex: 1;
+    border: 1px solid black;
+   border-radius: 5px;
+   color: black;
+   font-size: 15px;
+   }
+   .customvisit:hover{
+    border: 1px solid black;
+   border-radius: 5px;
+   color: black;
+   box-shadow: 1px 5px 2px 3px rgb(22, 22, 2);
+
+   }
+
+   .customvisit button{
+            padding: 1px;
+            background-color: brown;
+        }
+
+        .customsidebar{
+            grid-column: s;
+            background-color: white;
+        }
+        .customauthor{
+            /* box-shadow: 2px 3px 4px 3px grey; */
+            border-radius: 20%;
+        }
+
+        .customfa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 40%;
+            }
+
+           .customfa:hover {
+           opacity: 0.7;
+                  }
+
+         .customfa-facebook {
+             background: #3B5998;
+            color: white;
+                     }
+
+       .customfa-twitter {        
+              background: #55ACEE;
+              color: white;
+                    }
+    .customfa-linkedin {
+           background: #007bb5;
+             color: white;
+              }
+
+       .customfa-youtube {
+         background: #bb0000;
+       color: white;
+      }
+
+     .customfa-instagram {
+    background: #125688;
+       color: white;
+              }
+
+
+
+
+       .customfooter{
+         grid-column: f;
+        background-color: rgb(19, 14, 14);
+
+       }
+       .customfooter p{
+            text-align: center;
+            font-style: larger;
+            font-size: 17px;
+            color: white;
+        }
+
+    </style>
+    
+        
+</head>
+<body>  <div class="main-layout">
+     <div class="header">
+         <div class="topnav">
+            <a class="active" href="#Home">Home</a>
+            <a href="#About me">About</a>
+            <a href="#servise">Servise</a>
+            <input type="text" placeholder="Search your product">
+        </div>
+     </div>
+        <div id="mainmenu" class="menu">
+           
+            <img src="https://thumbs.dreamstime.com/b/guest-avatar-vector-illustration-default-male-profile-icon-image-profile-guest-avatar-vector-illustration-default-male-profile-182095612.jpg" width="200px" height="100px"><br>
+            <h1>Hi, you!</h1>
+            <br>
+            <a class="act"heref="#Dashboard">⛶ DashBoard</a> <br>
+            <br>
+            <a class="act1" href="#timeline">⊟ Timeline</a> <br>
+            <br>
+            <a class="act1" href="#Lifeevents">⌛ Life events</a> <br>
+            <br>
+            <a class="act1" href="#Exit">⛔ Exit </a> <br>
+            <br>
+            <!-- <ul>
+                <li><a href="#sum">⚫Submited</a></li><br>
+                <li><a href="#yourtask">⚫Your task</a> </li><br>
+                <li><a href="#Actions">⚫Actions</a></li>
+
+             </ul>
+             <br> -->
+            <button onclick="admin()">Admin</button> <br>
+            <br>
+            <button onclick="user()">User</button>
+            
+           
+        </div>
+        <div id="maincontent" class="content">
+                <div  class="o-content">
+                  <div class="each-content">
+                    <h1>Your Work summary</h1>
+                    <img src="https://previews.123rf.com/images/adam121/adam1211701/adam121170105299/70148916-analyse-et-rapport-de-vente.jpg" width="300px" height="200px">
+                    <img src="https://media.istockphoto.com/vectors/colorful-pie-chartcircle-percentage-diagram-infographic-vector-vector-id1346154041?k=20&m=1346154041&s=612x612&w=0&h=WVlMVaeHlVRg9gQeAYrJGJC7AwF63ZWuy0L2NnrZRfo=" width="200px" height="200px">
+                    <img src="https://media.istockphoto.com/vectors/revenue-isometric-icon-isolated-on-color-background-vector-id836113868?k=20&m=836113868&s=612x612&w=0&h=-VrQwUsV0YNaNJinp72lUD49aOAiRRArfP6cfxac3m4=" width="200px" height="200px">
+                    <img src="https://media.istockphoto.com/photos/growing-graph-picture-id1305098938?b=1&k=20&m=1305098938&s=170667a&w=0&h=pjrlGC39qqjaVhMdeD0DoCecrGaUAE-HWj6OLWQRu_o=" width="500px" height="200px">
+                    <div class="click">
+                        <div class="info">
+                            <h1>Show by month</h1>
+                        </div>
+                        <div>
+                            <button class="visit">Transactions</button>
+                        </div>
+                    </div>
+                </div>
+            
+               
+              </div>
+
+
+              <!-- <div  class="o-content">
+                <div class="each-content">
+                  <h1>Your Work summary</h1>
+                  <img src="https://media.istockphoto.com/vectors/colorful-pie-chartcircle-percentage-diagram-infographic-vector-vector-id1346154041?k=20&m=1346154041&s=612x612&w=0&h=WVlMVaeHlVRg9gQeAYrJGJC7AwF63ZWuy0L2NnrZRfo=" width="auto" height="400px">
+                  <div class="click">
+                      <div class="info">
+                          <h1>Show by month</h1>
+                      </div>
+                      <div>
+                          <button class="visit">Transactions</button>
+                      </div>
+                  </div>
+              </div>
+          
+             
+            </div>
+
+            <div  class="o-content">
+                <div class="each-content">
+                  <h1>Your Work summary</h1>
+                  <img src="https://media.istockphoto.com/vectors/revenue-isometric-icon-isolated-on-color-background-vector-id836113868?k=20&m=836113868&s=612x612&w=0&h=-VrQwUsV0YNaNJinp72lUD49aOAiRRArfP6cfxac3m4=" width="auto" height="400px">
+
+                  <div class="click">
+                      <div class="info">
+                          <h1>Show by month</h1>
+                      </div>
+                      <div>
+                          <button class="visit">Transactions</button>
+                      </div>
+                  </div>
+              </div>
+          
+             
+            </div>
+
+            <div  class="o-content">
+                <div class="each-content">
+                  <h1>Your Work summary</h1>
+                  <img src="https://media.istockphoto.com/photos/growing-graph-picture-id1305098938?b=1&k=20&m=1305098938&s=170667a&w=0&h=pjrlGC39qqjaVhMdeD0DoCecrGaUAE-HWj6OLWQRu_o=" width="auto" height="400px">
+                  <div class="click">
+                      <div class="info">
+                          <h1>Show by month</h1>
+                      </div>
+                      <div>
+                          <button class="visit">Transactions</button>
+                      </div>
+                  </div>
+              </div>
+          
+             
+            </div> -->
+
+            <div class="sidebar">
+                <div id="adminauthor" class="author">
+                <h1>Shares</h1>
+                 <a href="#" class="fa fa-facebook"></a><br>
+                 <br>
+                 <a href="#" class="fa fa-twitter"></a><br>
+                 <br>
+                 <a href="#" class="fa fa-linkedin"></a><br>
+                 <br>
+                 <a href="#" class="fa fa-youtube"></a><br>
+                 <br>
+                 <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id= "mainfooter"class="footer">
+            <p>Copyright © 2000-2022</p>
+        </div>
+    
+</div>
+<script src="dom.js"></script>   
+
+
+             
+        
+</body>
+</html>
